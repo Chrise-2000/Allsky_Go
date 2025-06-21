@@ -13,4 +13,6 @@
     <h2>Github Page to support development of Allsky Go custom features</h2>
     <p>
       Allsky Go! Objectives; Automatic Time and Location Detection.  12hr Autonomy.  One Button Set-up.  Full Connectivity on the go.
+    <img src="https://www.allsky.it/AllskyGo/photos/concept__3_.jpg" alt="Allsky Go! Concept" style="max-width:30%; height:auto; margin-top:20px;" /> 
+    <img src="https://www.allsky.it/AllskyGo/photos/concept__4_.jpg" alt="Allsky Go! Concept" style="max-width:30%; height:auto; margin-top:20px;" /> 
     </p>
