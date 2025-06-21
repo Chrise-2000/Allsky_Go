@@ -5,8 +5,9 @@ Functions provided to:
 - Run Shutdown Melodie when Safe Power Offer Button B Pressed
 - Run GenerateForDay Tone when Button A Pressed
 
-#Connected to 
-
+#Connect Buzzer to the following GPIO Pints
+#PIN  13 +ve (Red)
+#PIN GRN -ve (Black)
 
 #Boot Configuration
 #*****************************************
