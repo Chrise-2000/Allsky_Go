@@ -1,4 +1,7 @@
-#  SHUTDOWN MELODY
+#Remember to Insert as subprocess into Button_a+b.py script
+
+#  SHUTDOWN MELODY shutdown_buzzer.py
+
 from gpiozero import PWMOutputDevice
 from time import sleep
 
