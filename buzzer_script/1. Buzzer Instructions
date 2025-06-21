@@ -15,3 +15,6 @@ Functions provided to:
 sudo nano /etc/rc.local   # Create Boot File 
 sudo chmod +x /etc/rc.local # Make Boot File Executable
 sudo reboot # Reboot System
+
+#Button Press Configuration
+#Insert buzzer scripts as subprocess within Button Press script
