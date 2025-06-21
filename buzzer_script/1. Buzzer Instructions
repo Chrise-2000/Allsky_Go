@@ -1,0 +1,16 @@
+Piezo Buzzer 
+
+Functions provided to:
+- Run Startup Melodie at Boot
+- Run Shutdown Melodie when Safe Power Offer Button B Pressed
+- Run GenerateForDay Tone when Button A Pressed
+
+#Connected to 
+
+
+#Boot Configuration
+#*****************************************
+#Add startup_buzzer.py to boot files in command line:
+sudo nano /etc/rc.local   # Create Boot File 
+sudo chmod +x /etc/rc.local # Make Boot File Executable
+sudo reboot # Reboot System
