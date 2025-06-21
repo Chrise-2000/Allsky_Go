@@ -7,7 +7,7 @@
   <div class="container">
     <h2>What is Allsky Go?</h2>
     <p>
-      Allsky Go! is a powerful, portable all-sky camera system designed for skywatchers, researchers, and dreamers on the move. Whether you're chasing meteor showers or keeping watch over the night sky, Allsky Go! makes it easy to capture every celestial event in real time.
+      Allsky Go! is a powerful, portable all-sky camera system designed for skywatchers, researchers, and dreamers on the move. Whether you're chasing meteor showers or keeping watch over the night sky, Allsky Go! makes it easy to capture every celestial event in real time. Inspired by the <a href="https://github.com/thomasjacquin/allsky" target="_blank">Thomas Jacquin concept running on Raspberry Pi.
     </p>
     <div class="container">
     <h2>Github Page to support development of Allsky Go custom features</h2>
