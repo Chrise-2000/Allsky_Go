@@ -1,0 +1,26 @@
+# BOOT CONFIGURATION
+
+# Configure the RaspberryPi to disable unneccessary features to save/reduce power consumption
+# Modify Boot configuration
+# nano /boot/firmware/config.txt 
+
+
+# Add the following lines
+# ALLSKY:Enable pwm for Buzzer
+dtoverlay=pwm-2chan
+
+#ALLSKY:Disable HDMI Output
+hdmi_blanking=2
+
+#ALLSKY Disable bluetooth 
+dtoverlay=disable-bt
+
+#ALLSKY Disable audio (loads snd_bcm2835) - ALLSKY:Changed to off
+dtparam=audio=off
+
+#ALLSKY Disable Onboard LEDS
+dtparam=pwr_led_trigger=none
+dtparam=act_led_trigger=none
+
+
+
