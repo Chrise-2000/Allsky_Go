@@ -1,7 +1,7 @@
  <header>
     <h1>Introducing Allsky Go!</h1>
     <p class="highlight">Your compact gateway to the universe</p>
-    <img src="http://www.allsky.it/allskygo/photos/concept%20(1).jpg" alt="Allsky Go! Concept" style="max-width:100%; height:auto; margin-top:20px;" />
+    <img src="(https://www.allsky.it/AllskyGo/photos/concept__1_.jpg)" alt="Allsky Go! Concept" style="max-width:100%; height:auto; margin-top:20px;" />
  </header>
 
   <div class="container">
