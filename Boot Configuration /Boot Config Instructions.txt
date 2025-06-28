@@ -2,7 +2,7 @@
 
 # Configure the RaspberryPi to disable unneccessary features to save/reduce power consumption
 # Modify Boot configuration
-# nano /boot/firmware/config.txt 
+# sudo nano /boot/firmware/config.txt 
 
 
 # Add the following lines
@@ -19,8 +19,13 @@ dtoverlay=disable-bt
 dtparam=audio=off
 
 #ALLSKY Disable Onboard LEDS
-dtparam=pwr_led_trigger=none
+# Disable ACT LED (green)
 dtparam=act_led_trigger=none
+dtparam=act_led_activelow=off
+
+# Disable PWR LED (red)
+dtparam=pwr_led_trigger=default-on
+dtparam=pwr_led_activelow=off
 
 
 
