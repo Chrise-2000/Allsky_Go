@@ -61,6 +61,8 @@ while True:
 
     # Write to overlay file
     with open(overlay_path, "w") as f:
-        f.write(f"Lat: {latitude}  Lon: {longitude}  Temp: {temp_str}  Humidity: {humidity_str}\n")
-
+        f.write(f"Latitude: {latitude}\n")
+        f.write(f"Longitude: {longitude}\n")
+        f.write(f"Temperature: {temp_str}\n")
+        f.write(f"Humidity: {humidity_str}\n")
     time.sleep(300)  # Wait 5 minutes
