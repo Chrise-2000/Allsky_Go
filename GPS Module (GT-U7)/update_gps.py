@@ -31,7 +31,7 @@ def read_gps():
                 latitude = f"{data_stream.TPV['lat']:.6f}"
                 longitude = f"{data_stream.TPV['lon']:.6f}"
                 break
-                
+
 def read_sht31():
     try:
         bus.write_i2c_block_data(sht31_address, 0x2C, [0x06])
@@ -45,7 +45,8 @@ def read_sht31():
         humidity = 100 * humidity_raw / 65535.0
 
         return f"{temperature:.1f}°C", f"{humidity:.1f}%"
-    except Exception:
+    except Exception as e:
+        print(f"[{datetime.now()}] SHT31 read error: {e}")
         return "N/A", "N/A"
 
 # === Main Loop ===
@@ -59,10 +60,17 @@ while True:
     # Always update temperature and humidity
     temp_str, humidity_str = read_sht31()
 
-    # Write to overlay file
-    with open(overlay_path, "w") as f:
-        f.write(f"Latitude: {latitude}\n")
-        f.write(f"Longitude: {longitude}\n")
-        f.write(f"Temperature: {temp_str}\n")
-        f.write(f"Humidity: {humidity_str}\n")
+    # Write to overlay file safely
+    try:
+        temp_path = overlay_path + ".tmp"
+        with open(temp_path, "w") as f:
+            f.write(f"Latitude: {latitude}\n")
+            f.write(f"Longitude: {longitude}\n")
+            f.write(f"Temperature: {temp_str}\n")
+            f.write(f"Humidity: {humidity_str}\n")
+        os.replace(temp_path, overlay_path)
+        print(f"[{now}] Overlay updated.")
+    except Exception as e:
+        print(f"[{now}] Failed to write overlay: {e}")
+
     time.sleep(300)  # Wait 5 minutes
