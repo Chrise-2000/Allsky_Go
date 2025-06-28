@@ -17,6 +17,7 @@ dtoverlay=disable-bt
 
 #ALLSKY Disable audio (loads snd_bcm2835) - ALLSKY:Changed to off
 dtparam=audio=off
+dtoverlay=vc4-kms-v3d,noaudio
 
 #ALLSKY Disable Onboard LEDS
 # Disable ACT LED (green)
