@@ -1,1 +1,23 @@
+import smbus
+import time
+
+bus = smbus.SMBus(1)
+address = 0x44  # or 0x45 depending on your sensor
+
+# Send measurement command
+bus.write_i2c_block_data(address, 0x2C, [0x06])
+time.sleep(0.5)
+
+# Read 6 bytes of data
+data = bus.read_i2c_block_data(address, 0x00, 6)
+
+# Convert temperature and humidity
+temp_raw = data[0] << 8 | data[1]
+humidity_raw = data[3] << 8 | data[4]
+
+temperature = -45 + (175 * temp_raw / 65535.0)
+humidity = 100 * humidity_raw / 65535.0
+
+print(f"Temperature: {temperature:.2f} °C")
+print(f"Humidity: {humidity:.2f} %")
 
