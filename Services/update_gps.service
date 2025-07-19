@@ -1,0 +1,1 @@
+[Unit] Description=Update GPS Text File After=network.target [Service] ExecStart=/usr/bin/python3 /home/pi/scripts/update_gps.py WorkingDirectory=/home/pi/scripts StandardOutput=journal StandardError=journal Restart=on-failure User=pi [Install] WantedBy=multi-user.target 
