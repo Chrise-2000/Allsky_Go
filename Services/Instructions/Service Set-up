@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Step 2: GPS Service at Start-up</title>
+</head>
+<body>
+  <h2>Step 2: GPS Service at Start-up <em>[update_gps.service]</em></h2>
+  <p>To automatically run your script <code>/home/pi/scripts/update_gps.py</code> at startup on your Raspberry Pi, the most reliable method is to use a systemd service.</p>
+
+  <h3>✅ Step-by-Step: Create a systemd service</h3>
+  <ol>
+    <li><strong>Create the service file:</strong><br>
+      <code>sudo nano /etc/systemd/system/update_gps.service</code>
+    </li>
+
+    <li><strong>Paste this configuration:</strong>
+      <pre>
+[Unit]
+Description=Update GPS Text File
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/scripts/update_gps.py
+WorkingDirectory=/home/pi/scripts
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+User=pi       # CHANGE TO YOUR USER IF REQUIRED
+
+[Install]
+WantedBy=multi-user.target
+      </pre>
+      <p>Save and exit: <code>Ctrl+O</code>, <code>Enter</code>, then <code>Ctrl+X</code></p>
+    </li>
+
+    <li><strong>Enable the service to run at boot:</strong><br>
+      <code>sudo systemctl daemon-reload</code><br>
+      <code>sudo systemctl enable update_gps.service</code>
+    </li>
+
+    <li><strong>Start the service now (optional):</strong><br>
+      <code>sudo systemctl start update_gps.service</code>
+    </li>
+  </ol>
+</body>
+</html>
