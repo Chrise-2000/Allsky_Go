@@ -82,22 +82,24 @@ def read_gps(timeout=60):
                 pass #quietly move one
 		#logging.warning(f"⚠️ Skipping invalid GPS mode value: {mode} ({e})")
 
-# Define update settings.json
+# Define update settings.json V2
 
 def update_settings_json(lat, lon):
     config_path = '/home/pi/allsky/config/settings.json'
     try:
-        with open(config_path, 'r') as file:
-           data = json.load(file)
+        lat_prefix = '+' if lat >= 0 else '-'
+        lon_prefix = '+' if lon >= 0 else '-'
 
-        data["latitude"] = f"{float(lat):.3f}"  # preserves precision
-        data["longitude"] = f"{float(lon):.3f}"
+        with open(config_path, 'r') as file:
+            data = json.load(file)
+
+        data["latitude"] = f"{lat_prefix}{abs(lat):.3f}"
+        data["longitude"] = f"{lon_prefix}{abs(lon):.3f}"
 
         with open(config_path, 'w') as file:
-           json.dump(data, file, indent=4)
+            json.dump(data, file, indent=4)
 
         logging.info(f"📝 settings.json updated → latitude: {data['latitude']}, longitude: {data['longitude']}")
-
     except Exception as e:
         logging.error(f"❌ Failed to update settings.json: {e}")
 
