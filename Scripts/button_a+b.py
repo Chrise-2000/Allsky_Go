@@ -4,8 +4,8 @@ import subprocess
 from datetime import datetime, timedelta
 from signal import pause  # Efficiently keep the script running
 
-button_a = Button(27, pull_up=False)  # Use pull-down mode
-button_b = Button(17, pull_up=False)  # Button B
+button_a = Button(27, pull_up=True)  # Button A - Use pull-up mode
+button_b = Button(17, pull_up=True)  # Button B - Use pull-up mode
 
 def run_script():
     yesterday = (datetime.today() - timedelta(days=1)).strftime('%Y%m%d')  # Get yesterday's date
