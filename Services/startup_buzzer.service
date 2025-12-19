@@ -1,8 +1,10 @@
 [Unit]
 Description=Startup Buzzer Script
-After=multi-user.target
+After=multi-user.target sysinit.target local-fs.target
+Wants=dev-gpiomem
 
 [Service]
+Type=oneshot
 ExecStart=/usr/bin/python3 /home/pi/scripts/startup_buzzer.py
 WorkingDirectory=/home/pi/scripts
 User=pi
