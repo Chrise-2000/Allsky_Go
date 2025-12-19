@@ -1,0 +1,12 @@
+[Unit]
+Description=Startup Buzzer Script
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/scripts/startup_buzzer.py
+WorkingDirectory=/home/pi/scripts
+User=pi
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
