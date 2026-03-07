@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-pins = [14, 18, 8, 25]   # IN1–IN4
+pins = [24, 27, 17, 23]   # IN1–IN4
 labels = ["Phase A", "Phase B", "Phase C", "Phase D"]
 
 GPIO.setmode(GPIO.BCM)
@@ -25,3 +25,4 @@ while True:
         time.sleep(0.5)
 
  
+
