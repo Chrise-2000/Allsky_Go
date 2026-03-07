@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-pins = [14, 18, 8, 25]
+pins = [24, 27, 17, 23]
 
 sequence = [
     [1,0,0,0],
@@ -31,3 +31,4 @@ for _ in range(steps_per_rev):
     time.sleep(delay)
 
 GPIO.cleanup()
+
