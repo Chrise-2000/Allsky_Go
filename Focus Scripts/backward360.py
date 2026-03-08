@@ -21,6 +21,7 @@ for p in pins:
     GPIO.setup(p, GPIO.OUT)
     GPIO.output(p, 0)
 
+# 4096 represents 360 Degrees Rotation - set to 2048 for half turn, or 1024 for quarter turn
 delay = 0.006
 steps_per_rev = 4096
 step_index = 0
@@ -33,6 +34,7 @@ for _ in range(steps_per_rev):
     time.sleep(delay)
 
 GPIO.cleanup()
+
 
 
 
