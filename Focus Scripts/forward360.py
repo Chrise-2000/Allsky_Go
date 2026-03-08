@@ -1,3 +1,4 @@
+#PINION WILL TURN 360 DEGREES
 import RPi.GPIO as GPIO
 import time
 
@@ -36,6 +37,7 @@ for _ in range(steps_per_rev):
     time.sleep(delay)
 
 GPIO.cleanup()
+
 
 
 
