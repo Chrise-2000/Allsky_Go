@@ -1,5 +1,5 @@
 <header>
-  <h1>Introducing Allsky Go!</h1>
+  <h1>Introducing Allsky V3 & Allsky Go!</h1>
   <p class="highlight">Your compact gateway to the universe</p>
   <p>
     <a href="https://www.printables.com/model/1334022" target="_blank" style="display: inline-block; margin-top: 10px; font-weight: bold; color: #007BFF; text-decoration: underline;">
